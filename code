@@ -4,7 +4,11 @@ player = int(input("Guess a number between 1 to 10: "))
 cont = 1
 while True:
     if player == comp:
+        print(f'Congratulations, you are right!\nYou guess {player} and the computer play {comp}')
         break
-    player = int(input(f"No :( You lost. Guess another number between 1 to 10: "))
+    if comp < player:
+        print(f"You kicked up, it's less")
+    elif comp > player:
+        print(f"You kicked low, it's more")
+    player = int(input(f"No :( You lost. Guess another number between 1 to 10: "))  
     cont += 1
-print(f"Congratulations, the computer guess {comp}. Before getting it right, you lost {cont} times")
